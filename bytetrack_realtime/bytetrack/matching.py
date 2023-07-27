@@ -52,8 +52,8 @@ def linear_assignment(cost_matrix, thresh):
 def ious(altrbs, bltrbs):
     """
     Compute cost based on IoU
-    :type altrbs: list[ltrb] | np.ndarray
-    :type altrbs: list[ltrb] | np.ndarray
+    :type altrbs: list[tlbr] | np.ndarray
+    :type altrbs: list[tlbr] | np.ndarray
 
     :rtype ious np.ndarray
     """
