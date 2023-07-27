@@ -100,7 +100,7 @@ class STrack(BaseTrack):
 
     @property
     # @jit(nopython=True)
-    def ltrb(self):
+    def tlbr(self):
         """Convert bounding box to format `(min x, min y, max x, max y)`, i.e.,
         `(top left, bottom right)`.
         """
@@ -124,14 +124,14 @@ class STrack(BaseTrack):
 
     @staticmethod
     # @jit(nopython=True)
-    def ltrb_to_ltwh(ltrb):
-        ret = np.asarray(ltrb).copy()
+    def tlbr_to_ltwh(tlbr):
+        ret = np.asarray(tlbr).copy()
         ret[2:] -= ret[:2]
         return ret
 
     @staticmethod
     # @jit(nopython=True)
-    def ltwh_to_ltrb(ltwh):
+    def ltwh_to_tlbr(ltwh):
         ret = np.asarray(ltwh).copy()
         ret[2:] += ret[:2]
         return ret
